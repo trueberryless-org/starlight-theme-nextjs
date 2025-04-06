@@ -37,13 +37,16 @@ export default function starlightNextjsTheme(): StarlightPlugin {
                     borderRadius: "0.5rem",
                     frames: {
                       editorActiveTabIndicatorTopColor: "unset",
-                      editorActiveTabIndicatorBottomColor: "var(--sl-color-gray-3)",
+                      editorActiveTabIndicatorBottomColor:
+                        "var(--sl-color-gray-3)",
                       editorTabBarBorderBottomColor: "var(--sl-color-gray-5)",
                       frameBoxShadowCssValue: "unset",
                     },
                   },
                   themes: ["vitesse-dark", "vitesse-light"],
-                  ...(typeof starlightConfig.expressiveCode === "object" ? starlightConfig.expressiveCode : {}),
+                  ...(typeof starlightConfig.expressiveCode === "object"
+                    ? starlightConfig.expressiveCode
+                    : {}),
                 },
         });
       },

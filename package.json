@@ -1,23 +1,35 @@
 {
   "name": "starlight-nextjs-theme-monorepo",
   "version": "0.0.1",
-  "license": "MIT",
-  "description": "Starlight theme inspired by the NextJS docs.",
-  "author": "trueberryless-org",
-  "type": "module",
-  "engines": {
-    "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
-  },
-  "packageManager": "pnpm@9.6.0",
   "private": true,
+  "description": "Starlight theme inspired by the NextJS docs.",
   "homepage": "https://github.com/trueberryless-org/starlight-nextjs-theme",
+  "bugs": {
+    "url": "https://github.com/trueberryless-org/starlight-nextjs-theme/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/trueberryless-org/starlight-nextjs-theme.git"
   },
-  "bugs": "https://github.com/trueberryless-org/starlight-nextjs-theme/issues",
+  "license": "MIT",
+  "author": "trueberryless <trueberryless@gmail.com> (https://trueberryless.org)",
+  "type": "module",
+  "scripts": {
+    "version": "pnpm changeset version && pnpm i --no-frozen-lockfile"
+  },
   "dependencies": {
     "@fontsource/geist-mono": "^5.2.5",
     "@fontsource/geist-sans": "^5.2.5"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.11",
+    "@trivago/prettier-plugin-sort-imports": "5.2.2",
+    "prettier": "3.5.3",
+    "prettier-plugin-astro": "0.14.1"
+  },
+  "packageManager": "pnpm@9.6.0",
+  "engines": {
+    "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
   }
 }

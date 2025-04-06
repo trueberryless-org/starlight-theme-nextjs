@@ -1,16 +1,24 @@
 {
   "name": "starlight-nextjs-theme-docs",
   "version": "0.0.1",
-  "license": "MIT",
+  "private": true,
   "description": "Starlight theme inspired by the NextJS docs.",
+  "homepage": "https://github.com/trueberryless-org/starlight-nextjs-theme",
+  "bugs": "https://github.com/trueberryless-org/starlight-nextjs-theme/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trueberryless-org/starlight-nextjs-theme.git",
+    "directory": "docs"
+  },
+  "license": "MIT",
   "author": "trueberryless-org",
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
+    "astro": "astro",
     "build": "astro build",
+    "dev": "astro dev",
     "preview": "astro preview",
-    "astro": "astro"
+    "start": "astro dev"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.32.6",
@@ -19,15 +27,8 @@
     "sharp": "^0.34.0",
     "starlight-nextjs-theme": "workspace:*"
   },
+  "packageManager": "pnpm@9.6.0",
   "engines": {
     "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
-  },
-  "private": true,
-  "homepage": "https://github.com/trueberryless-org/starlight-nextjs-theme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/trueberryless-org/starlight-nextjs-theme.git",
-    "directory": "docs"
-  },
-  "bugs": "https://github.com/trueberryless-org/starlight-nextjs-theme/issues"
+  }
 }
