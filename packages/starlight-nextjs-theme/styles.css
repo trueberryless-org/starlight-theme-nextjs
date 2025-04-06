@@ -32,9 +32,11 @@
     1rem,
     calc(
       (
-          100% - var(--__toc-width, var(--sl-sidebar-width)) - (2 * var(--__toc-width, 1.5rem)) - var(--sl-content-inline-start, 0rem) -
-            var(--sl-content-width)
-        ) / 2
+          100% - var(--__toc-width, var(--sl-sidebar-width)) -
+            (2 * var(--__toc-width, 1.5rem)) -
+            var(--sl-content-inline-start, 0rem) - var(--sl-content-width)
+        ) /
+        2
     )
   );
 }
@@ -79,11 +81,19 @@ header.header {
     min-width: 15rem;
   }
 
-  header.header > .header > div.sl-flex:has(site-search) > site-search > button {
+  header.header
+    > .header
+    > div.sl-flex:has(site-search)
+    > site-search
+    > button {
     color: var(--sl-color-gray-1);
   }
 
-  header.header > .header > div.sl-flex:has(site-search) > site-search:hover > button {
+  header.header
+    > .header
+    > div.sl-flex:has(site-search)
+    > site-search:hover
+    > button {
     background-color: var(--sl-color-gray-6);
     border-color: var(--sl-color-gray-5);
     color: var(--sl-color-gray-1);
@@ -382,7 +392,9 @@ starlight-tabs ul[role="tablist"] a[role="tab"] {
   padding-block: 0.25rem;
 }
 
-starlight-tabs ul[role="tablist"] a[role="tab"]:not([aria-selected="true"]):hover {
+starlight-tabs
+  ul[role="tablist"]
+  a[role="tab"]:not([aria-selected="true"]):hover {
   border-color: var(--sl-color-white);
   color: var(--sl-color-white);
 }
@@ -441,7 +453,11 @@ starlight-tabs ul[role="tablist"] a[role="tab"]:not([aria-selected="true"]):hove
 }
 
 .starlight-aside tr:nth-child(2n) {
-  background-color: color-mix(in srgb, var(--sl-color-asides-border) 25%, var(--sl-color-black));
+  background-color: color-mix(
+    in srgb,
+    var(--sl-color-asides-border) 25%,
+    var(--sl-color-black)
+  );
 }
 
 /* File Tree */
@@ -452,7 +468,12 @@ starlight-tabs ul[role="tablist"] a[role="tab"]:not([aria-selected="true"]):hove
   border-radius: 0.5rem;
 }
 
-.sl-markdown-content starlight-file-tree .directory > details > summary:hover ~ ul {
+.sl-markdown-content
+  starlight-file-tree
+  .directory
+  > details
+  > summary:hover
+  ~ ul {
   border-color: var(--sl-color-accent-high);
 }
 
@@ -472,7 +493,11 @@ starlight-tabs ul[role="tablist"] a[role="tab"]:not([aria-selected="true"]):hove
 .sl-steps > li:last-of-type::after {
   --guide-width: 1px;
 
-  background: linear-gradient(to bottom, var(--sl-color-hairline-light), var(--sl-color-bg) 85%);
+  background: linear-gradient(
+    to bottom,
+    var(--sl-color-hairline-light),
+    var(--sl-color-bg) 85%
+  );
   bottom: var(--bullet-margin);
   content: "";
   inset-inline-start: calc((var(--bullet-size) - var(--guide-width)) / 2);
@@ -497,7 +522,8 @@ starlight-tabs ul[role="tablist"] a[role="tab"]:not([aria-selected="true"]):hove
   color: var(--sl-color-accent-high);
 }
 
-:is(.hero, .sl-markdown-content) .sl-link-button.primary:is(:hover, :focus-visible) {
+:is(.hero, .sl-markdown-content)
+  .sl-link-button.primary:is(:hover, :focus-visible) {
   border-color: var(--sl-color-accent-low);
   color: var(--sl-color-white);
 }
@@ -507,7 +533,8 @@ starlight-tabs ul[role="tablist"] a[role="tab"]:not([aria-selected="true"]):hove
   color: var(--sl-color-gray-2);
 }
 
-:is(.hero, .sl-markdown-content) .sl-link-button.secondary:is(:hover, :focus-visible) {
+:is(.hero, .sl-markdown-content)
+  .sl-link-button.secondary:is(:hover, :focus-visible) {
   border-color: var(--sl-color-accent-high);
   color: var(--sl-color-accent-high);
 }
@@ -516,7 +543,8 @@ starlight-tabs ul[role="tablist"] a[role="tab"]:not([aria-selected="true"]):hove
   padding-inline: 0.25rem;
 }
 
-:is(.hero, .sl-markdown-content) .sl-link-button.minimal:is(:hover, :focus-visible) {
+:is(.hero, .sl-markdown-content)
+  .sl-link-button.minimal:is(:hover, :focus-visible) {
   color: var(--sl-color-accent-high);
 }
 
