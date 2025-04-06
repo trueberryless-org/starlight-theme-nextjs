@@ -1,10 +1,10 @@
-@use 'sass:list';
-@use 'sass:map';
-@use 'sass:math';
-@use 'sass:meta';
-@use 'sass:string';
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
+@use "sass:meta";
+@use "sass:string";
 
-@use 'metadata';
+@use "metadata";
 
 $metadata: metadata.$metadata !default;
 $directory: null !default;
@@ -45,12 +45,20 @@ $displayVar: null !default;
   $directory: if(
     $directory,
     $directory,
-    '~@fontsource#{if($isVariable, '-variable', '')}/#{map.get($metadata, id)}/files'
+    "~@fontsource#{if($isVariable, "-variable", "")}/#{map.get($metadata, id)}/files"
   );
 
-  $family: if($family, $family, map.get($metadata, family) + if($isVariable, ' Variable', ''));
+  $family: if(
+    $family,
+    $family,
+    map.get($metadata, family) + if($isVariable, " Variable", "")
+  );
   $display: if($display, $display, swap);
-  $formats: if(not $formats or $formats == all, if($isVariable, woff2, (woff2, woff)), $formats);
+  $formats: if(
+    not $formats or $formats == all,
+    if($isVariable, woff2, (woff2, woff)),
+    $formats
+  );
   $subsets: if(
     $subsets,
     if($subsets == all, map.get($metadata, subsets), $subsets),
@@ -76,30 +84,30 @@ $displayVar: null !default;
     @each $unicodeSubset, $unicodeRange in map.get($metadata, unicode) {
       // If condition is true, generate faces for the current subset
       @if (
-      	// If there is no unicode information for the font or
+        // If there is no unicode information for the font or
         ($unicodeSubset == null) or
-        	// If the subset match a unicode subset or
-        	($subset == $unicodeSubset) or
-						(
-							// If $unicodeSubset is a numeric unicode subset
-							// and current subset exists in the list of font subsets but does not match any unicode subset
-							// then generate faces for this numeric unicode subset as it is representing part of the current subset
-							list.index(map.get($metadata, subsets), $subset) and not
-								map.has-key($metadata, unicode, $subset) and not
-									list.index(map.get($metadata, subsets), $unicodeSubset)
-						)
+          // If the subset match a unicode subset or
+        ($subset == $unicodeSubset) or
+          (
+            // If $unicodeSubset is a numeric unicode subset
+            // and current subset exists in the list of font subsets but does not match any unicode subset
+            // then generate faces for this numeric unicode subset as it is representing part of the current subset
+            list.index(map.get($metadata, subsets), $subset) and not
+              map.has-key($metadata, unicode, $subset) and not
+              list.index(map.get($metadata, subsets), $unicodeSubset)
+          )
       ) {
         @each $weight in if($axes, null, $weights) {
           @each $axis in $axes {
             @each $style in $styles {
-              $variant: '#{map.get($metadata, id)}-#{if($unicodeSubset, $unicodeSubset, $subset)}-#{if($axis, $axis, $weight)}-#{$style}';
+              $variant: "#{map.get($metadata, id)}-#{if($unicodeSubset, $unicodeSubset, $subset)}-#{if($axis, $axis, $weight)}-#{$style}";
 
               $src: ();
               @each $format in $formats {
                 $src: list.append(
                   $src,
-                  url('#{$directory}/#{$variant}.#{$format}')
-                    format('#{$format}#{if($axis, '-variations', '')}'),
+                  url("#{$directory}/#{$variant}.#{$format}")
+                    format("#{$format}#{if($axis, "-variations", "")}"),
                   comma
                 );
               }
