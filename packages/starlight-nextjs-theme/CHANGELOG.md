@@ -1,5 +1,11 @@
 # starlight-nextjs-theme
 
+## 0.1.2
+
+### Patch Changes
+
+- [#4](https://github.com/trueberryless-org/starlight-nextjs-theme/pull/4) [`479a7dc`](https://github.com/trueberryless-org/starlight-nextjs-theme/commit/479a7dc28391670e701d4baa23ddadc472bf0624) Thanks [@trueberryless](https://github.com/trueberryless)! - Add keywords and lower peerDep to Starlight 0.30 because it's just CSS
+
 ## 0.1.1
 
 ### Patch Changes
