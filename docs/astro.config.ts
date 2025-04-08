@@ -26,9 +26,13 @@ export default defineConfig({
           autogenerate: { directory: "examples" },
         },
       ],
-      social: {
-        github: "https://github.com/trueberryless-org/starlight-nextjs-theme",
-      },
+      social: [
+        {
+          icon: "github",
+          label: "GitHub",
+          href: "https://github.com/trueberryless-org/starlight-nextjs-theme",
+        },
+      ],
       title: "Starlight NextJS Theme",
     }),
   ],
