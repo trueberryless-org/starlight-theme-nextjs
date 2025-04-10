@@ -11,7 +11,12 @@ export default defineConfig({
           "https://github.com/trueberryless-org/starlight-nextjs-theme/edit/main/docs/",
       },
       plugins: [
-        starlightNextjsTheme(),
+        starlightNextjsTheme({
+          breadcrumbs: {
+            enabled: true,
+            maxDepth: 5,
+          },
+        }),
         starlightPluginsDocsComponents({
           pluginName: "starlight-nextjs-theme",
         }),
@@ -24,6 +29,10 @@ export default defineConfig({
         {
           label: "Examples",
           autogenerate: { directory: "examples" },
+        },
+        {
+          label: "Test",
+          autogenerate: { directory: "test" },
         },
       ],
       social: [

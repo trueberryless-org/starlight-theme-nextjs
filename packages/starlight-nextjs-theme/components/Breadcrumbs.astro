@@ -1,0 +1,146 @@
+---
+import { getCollection } from "astro:content";
+import config from "virtual:starlight-nextjs-theme-config";
+const { pathname } = Astro.url;
+const docs = await getCollection("docs");
+const pathSegments = pathname.split("/").filter(Boolean);
+function pathExists(path: string) {
+  const normalizedPath = path.endsWith("/") ? path : `${path}/`;
+  return docs.some(
+    (doc: { id: string }) =>
+      doc.id.startsWith(normalizedPath) || `/${doc.id}/` === normalizedPath
+  );
+}
+function getSegmentName(segment: string) {
+  const matchingDoc = docs.find(
+    (doc: { id: string }) =>
+      doc.id === segment || doc.id.endsWith(`/${segment}`)
+  );
+  if (matchingDoc) {
+    return matchingDoc.data.title;
+  }
+  return segment
+    .split("-")
+    .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+const breadcrumbs = [];
+let currentPath = "";
+for (const segment of pathSegments) {
+  currentPath += `/${segment}`;
+  breadcrumbs.push({
+    name: getSegmentName(segment),
+    path: currentPath,
+    isLinkable: pathExists(currentPath),
+  });
+}
+const limitedBreadcrumbs = breadcrumbs.slice(-config.breadcrumbs.maxDepth);
+if (limitedBreadcrumbs.length <= 1) {
+  return null;
+}
+---
+
+<nav aria-label="Breadcrumbs" class="sl-breadcrumbs">
+  <ol class="sl-breadcrumbs-list">
+    {
+      limitedBreadcrumbs.map((crumb, index) => (
+        <li class="sl-breadcrumbs-item">
+          {crumb.isLinkable && index < limitedBreadcrumbs.length - 1 ? (
+            <a href={crumb.path} class="sl-breadcrumbs-link">
+              {crumb.name}
+            </a>
+          ) : (
+            <span
+              class={`sl-breadcrumbs-text ${index === limitedBreadcrumbs.length - 1 ? "current" : ""}`}
+            >
+              {crumb.name}
+            </span>
+          )}
+          {index < limitedBreadcrumbs.length - 1 && (
+            <span class="sl-breadcrumbs-separator" aria-hidden="true">
+              ›
+            </span>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+
+<style>
+  .sl-breadcrumbs {
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  .sl-breadcrumbs-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0.25rem;
+    align-items: center;
+  }
+
+  .sl-breadcrumbs-item {
+    display: flex;
+    align-items: center;
+    max-width: 200px;
+  }
+
+  .sl-breadcrumbs-link,
+  .sl-breadcrumbs-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0.25rem 0;
+  }
+
+  .sl-breadcrumbs-link {
+    color: var(--sl-color-gray-3);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    cursor: pointer;
+  }
+
+  .sl-breadcrumbs-link:hover {
+    color: var(--sl-color-gray-2);
+  }
+
+  .sl-breadcrumbs-text {
+    color: var(--sl-color-gray-3);
+  }
+
+  .sl-breadcrumbs-text.current {
+    color: var(--sl-color-gray-2);
+    font-weight: 600;
+  }
+
+  .sl-breadcrumbs-separator {
+    margin: 0 1rem;
+    color: var(--sl-color-gray-4);
+    user-select: none;
+  }
+
+  /* Responsive improvements */
+  @media (max-width: 600px) {
+    .sl-breadcrumbs-item {
+      max-width: 150px;
+    }
+
+    /* Hide all but the last two breadcrumbs on small screens */
+    .sl-breadcrumbs-item:not(:nth-last-child(-n + 2)) {
+      display: none;
+    }
+
+    /* Add an ellipsis for the first visible item on small screens */
+    .sl-breadcrumbs-item:nth-last-child(2)::before {
+      content: "...";
+      margin-right: 0.4rem;
+      color: var(--sl-color-gray-4);
+    }
+  }
+</style>

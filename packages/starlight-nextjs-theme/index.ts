@@ -1,10 +1,29 @@
 import type { StarlightPlugin } from "@astrojs/starlight/types";
 
-export default function starlightNextjsTheme(): StarlightPlugin {
+import {
+  type StarlightNextjsThemeConfig,
+  type StarlightNextjsThemeUserConfig,
+  validateConfig,
+} from "./libs/config";
+import { overrideStarlightComponent } from "./libs/starlight";
+import { vitePluginStarlightNextjsThemeConfig } from "./libs/vite";
+
+export type { StarlightNextjsThemeConfig, StarlightNextjsThemeUserConfig };
+
+export default function starlightNextjsTheme(
+  userConfig?: StarlightNextjsThemeUserConfig
+): StarlightPlugin {
+  const config = validateConfig(userConfig);
+
   return {
     name: "starlight-nextjs-theme",
     hooks: {
-      "config:setup"({ config: starlightConfig, updateConfig }) {
+      "config:setup"({
+        config: starlightConfig,
+        updateConfig,
+        addIntegration,
+        logger,
+      }) {
         updateConfig({
           customCss: [
             ...(starlightConfig.customCss ?? []),
@@ -48,6 +67,30 @@ export default function starlightNextjsTheme(): StarlightPlugin {
                     ? starlightConfig.expressiveCode
                     : {}),
                 },
+          components: {
+            ...starlightConfig.components,
+            ...(config.breadcrumbs.enabled
+              ? overrideStarlightComponent(
+                  starlightConfig.components,
+                  logger,
+                  "PageTitle",
+                  "PageTitle"
+                )
+              : {}),
+          },
+        });
+
+        addIntegration({
+          name: "starlight-nextjs-theme-integration",
+          hooks: {
+            "astro:config:setup": ({ updateConfig }) => {
+              updateConfig({
+                vite: {
+                  plugins: [vitePluginStarlightNextjsThemeConfig(config)],
+                },
+              });
+            },
+          },
         });
       },
     },

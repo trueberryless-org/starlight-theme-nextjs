@@ -269,7 +269,7 @@ main {
   text-wrap: wrap;
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1416px) {
   html[data-has-sidebar] .sl-banner {
     width: var(--sl-content-width);
     float: right;

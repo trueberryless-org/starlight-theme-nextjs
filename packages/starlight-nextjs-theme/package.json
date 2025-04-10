@@ -8,7 +8,10 @@
   "exports": {
     ".": "./index.ts",
     "./fonts/*": "./fonts/*",
-    "./styles.css": "./styles.css"
+    "./styles.css": "./styles.css",
+    "./overrides/PageTitle.astro": "./overrides/PageTitle.astro",
+    "./components/PageTitle.astro": "./components/starlight/PageTitle.astro",
+    "./components/Breadcrumbs.astro": "./components/Breadcrumbs.astro"
   },
   "devDependencies": {
     "@astrojs/starlight": "^0.33.0",
