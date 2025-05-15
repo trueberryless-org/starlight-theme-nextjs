@@ -1,5 +1,11 @@
 # starlight-nextjs-theme
 
+## 0.1.3
+
+### Patch Changes
+
+- [#9](https://github.com/trueberryless-org/starlight-nextjs-theme/pull/9) [`65eb62a`](https://github.com/trueberryless-org/starlight-nextjs-theme/commit/65eb62a9587e9eeabe85e5f9cbfde2360590eef2) Thanks [@trueberryless](https://github.com/trueberryless)! - Fix margin between social icons, make whitespace between sidebar and content bigger
+
 ## 0.1.2
 
 ### Patch Changes
