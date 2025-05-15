@@ -34,7 +34,8 @@
       (
           100% - var(--__toc-width, var(--sl-sidebar-width)) -
             (2 * var(--__toc-width, 1.5rem)) -
-            var(--sl-content-inline-start, 0rem) - var(--sl-content-width)
+            var(--sl-content-inline-start, 0rem) - var(--sl-content-width) -
+            1rem
         ) /
         2
     )
@@ -99,8 +100,13 @@ header.header {
     color: var(--sl-color-gray-1);
   }
 
+  .social-icons {
+    gap: 2rem;
+    margin-right: 1rem;
+  }
+
   .social-icons::after {
-    border-inline-end: 0px solid var(--sl-color-gray-5);
+    display: none;
   }
 
   .social-icons > a {
