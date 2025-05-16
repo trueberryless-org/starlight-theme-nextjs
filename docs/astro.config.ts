@@ -19,7 +19,7 @@ export default defineConfig({
       sidebar: [
         {
           label: "Start Here",
-          items: [{ slug: "getting-started" }],
+          items: ["getting-started", "customization"],
         },
         {
           label: "Examples",

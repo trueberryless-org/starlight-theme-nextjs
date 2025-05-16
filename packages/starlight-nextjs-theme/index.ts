@@ -4,10 +4,15 @@ export default function starlightNextjsTheme(): StarlightPlugin {
   return {
     name: "starlight-nextjs-theme",
     hooks: {
-      "config:setup"({ config: starlightConfig, updateConfig }) {
+      "config:setup"({ config, updateConfig }) {
+        const userExpressiveCodeConfig =
+          !config.expressiveCode || config.expressiveCode === true
+            ? {}
+            : config.expressiveCode;
+
         updateConfig({
           customCss: [
-            ...(starlightConfig.customCss ?? []),
+            ...(config.customCss ?? []),
             "starlight-nextjs-theme/fonts/geist-mono/100.css",
             "starlight-nextjs-theme/fonts/geist-mono/200.css",
             "starlight-nextjs-theme/fonts/geist-mono/300.css",
@@ -29,24 +34,24 @@ export default function starlightNextjsTheme(): StarlightPlugin {
             "starlight-nextjs-theme/styles.css",
           ],
           expressiveCode:
-            starlightConfig.expressiveCode === false
+            config.expressiveCode === false
               ? false
               : {
+                  themes: ["vitesse-dark", "vitesse-light"],
+                  ...userExpressiveCodeConfig,
                   styleOverrides: {
                     borderColor: "var(--sl-color-gray-5)",
                     borderRadius: "0.5rem",
+                    ...userExpressiveCodeConfig.styleOverrides,
                     frames: {
                       editorActiveTabIndicatorTopColor: "unset",
                       editorActiveTabIndicatorBottomColor:
                         "var(--sl-color-gray-3)",
                       editorTabBarBorderBottomColor: "var(--sl-color-gray-5)",
                       frameBoxShadowCssValue: "unset",
+                      ...userExpressiveCodeConfig.styleOverrides?.frames,
                     },
                   },
-                  themes: ["vitesse-dark", "vitesse-light"],
-                  ...(typeof starlightConfig.expressiveCode === "object"
-                    ? starlightConfig.expressiveCode
-                    : {}),
                 },
         });
       },
