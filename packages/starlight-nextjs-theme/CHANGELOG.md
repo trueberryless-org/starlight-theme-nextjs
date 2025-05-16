@@ -1,5 +1,11 @@
 # starlight-nextjs-theme
 
+## 0.1.4
+
+### Patch Changes
+
+- [`ba3a9df`](https://github.com/trueberryless-org/starlight-nextjs-theme/commit/ba3a9df11896b701dab098f3b3dfb85808f94c71) Thanks [@trueberryless](https://github.com/trueberryless)! - Fix width of banner being too large when ToC is not visible
+
 ## 0.1.3
 
 ### Patch Changes
