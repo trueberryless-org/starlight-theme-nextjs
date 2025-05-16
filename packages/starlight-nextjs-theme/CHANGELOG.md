@@ -1,5 +1,29 @@
 # starlight-nextjs-theme
 
+## 0.2.0
+
+### Minor Changes
+
+- [#14](https://github.com/trueberryless-org/starlight-nextjs-theme/pull/14) [`623d0c7`](https://github.com/trueberryless-org/starlight-nextjs-theme/commit/623d0c7e561bf53c5c3dc9d932e59a605245a7aa) Thanks [@trueberryless](https://github.com/trueberryless)! - Groups all of the Starlight NextJS theme CSS declarations into a single `nextjs` [cascade layer](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers).
+
+  This change aligns with the Starlight CSS architecture and allows for easier customization of the Starlight NextJS theme CSS as any custom unlayered CSS will override the default styles. If you are using cascade layers in your custom CSS, you can use the [`@layer`](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) CSS at-rule to define the order of precedence for different layers including the ones used by Starlight and the Starlight NextJS theme.
+
+  Make sure to check your site’s appearance when upgrading to make sure there are no style regressions caused by this change.
+
+- [#14](https://github.com/trueberryless-org/starlight-nextjs-theme/pull/14) [`623d0c7`](https://github.com/trueberryless-org/starlight-nextjs-theme/commit/623d0c7e561bf53c5c3dc9d932e59a605245a7aa) Thanks [@trueberryless](https://github.com/trueberryless)! - ⚠️ **BREAKING CHANGE:** The minimum supported version of Starlight is now version `0.34.0`.
+
+  Please use the `@astrojs/upgrade` command to upgrade your project:
+
+  ```sh
+  npx @astrojs/upgrade
+  ```
+
+### Patch Changes
+
+- [#14](https://github.com/trueberryless-org/starlight-nextjs-theme/pull/14) [`4a3ba25`](https://github.com/trueberryless-org/starlight-nextjs-theme/commit/4a3ba257a0f60652fe7eaa049d2dc800cfee7b90) Thanks [@trueberryless](https://github.com/trueberryless)! - Fixes a banner position issue when using a banner in pages with a sidebar.
+
+- [#14](https://github.com/trueberryless-org/starlight-nextjs-theme/pull/14) [`39abcc1`](https://github.com/trueberryless-org/starlight-nextjs-theme/commit/39abcc1f2310f42e4417891453e703a70ae517e7) Thanks [@trueberryless](https://github.com/trueberryless)! - Fixes an issue where nested user-defined Expressive Code settings were not being applied correctly.
+
 ## 0.1.4
 
 ### Patch Changes
