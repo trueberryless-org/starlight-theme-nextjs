@@ -267,28 +267,41 @@ main {
   background-color: var(--sl-color-accent-low);
   border: 1px solid var(--sl-color-accent-high);
   border-radius: 0.5rem;
+  box-shadow: none;
   color: var(--sl-color-white);
   line-height: 1.4;
-  margin: 2rem var(--sl-content-pad-x);
+  margin-block: 2rem -0.5rem;
+  margin-inline: var(--sl-content-pad-x);
+  max-width: var(--sl-content-width);
   padding: 1rem;
   text-align: start;
-  text-wrap: wrap;
-}
+  text-wrap: initial;
 
-@media (min-width: 1400px) {
-  html[data-has-sidebar] .sl-banner {
-    width: var(--sl-content-width);
-    float: right;
+  a {
+    color: var(--sl-color-green-accent);
+    text-underline-offset: 0.25em;
+
+    &:is(:hover, :focus-visible) {
+      color: var(--sl-color-accent-high);
+    }
   }
-}
 
-html:not([data-has-sidebar]) .sl-banner {
-  margin-inline: var(--sl-nav-pad-x);
-}
+  @media (min-width: 72rem) {
+    margin-bottom: -1rem;
+    margin-inline: auto;
 
-.sl-banner a {
-  color: var(--sl-color-accent-high);
-  text-underline-offset: 0.25em;
+    [data-has-sidebar] & {
+      justify-self: end;
+      margin-inline: var(--sl-content-pad-x);
+    }
+  }
+
+  @media (min-width: 88.5rem) {
+    [data-has-sidebar] & {
+      margin-left: auto;
+      margin-right: var(--sl-content-pad-x);
+    }
+  }
 }
 
 /* Content */
