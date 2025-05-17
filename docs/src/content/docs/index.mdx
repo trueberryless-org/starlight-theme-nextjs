@@ -1,9 +1,9 @@
 ---
-title: Starlight NextJS Theme
+title: Starlight NextJS
 description: Starlight theme inspired by the NextJS docs.
 head:
   - tag: title
-    content: Starlight NextJS Theme
+    content: Starlight NextJS
   - tag: style
     content: |
       .hero-html {
@@ -14,29 +14,38 @@ head:
       }
 template: splash
 editUrl: false
+lastUpdated: false
 hero:
   tagline: Starlight theme inspired by the NextJS docs.
   image:
-    html: "🎱"
+    html: '🎱'
   actions:
-    - text: Get Started
+    - text: Get started
       link: /getting-started/
-      icon: right-arrow
+      icon: rocket
     - text: Examples
       link: /examples/kitchen-sink/
       icon: right-arrow
       variant: minimal
 ---
 
-import { Card, CardGrid } from "@astrojs/starlight/components";
+import { Card, CardGrid } from '@astrojs/starlight/components'
 
 ## Next steps
 
 <CardGrid stagger>
-  <Card title="Install the plugin" icon="puzzle">
-    Check the [getting started guide](/getting-started/) for installation instructions.
+  <Card title="Install the theme" icon="puzzle">
+    Check the [getting started guide](/getting-started/) for installation
+    instructions.
   </Card>
-  <Card title="Configure the plugin" icon="setting">
+  <Card title="Configure the theme" icon="rocket">
     Edit your config in the `astro.config.mjs` file.
+  </Card>
+  <Card title="Preview the theme" icon="seti:image">
+    Check out the [example pages](/examples/kitchen-sink/) to see the theme in
+    action.
+  </Card>
+  <Card title="Read the docs" icon="open-book">
+    Learn more in the [Starlight NextJS Docs](/getting-started/).
   </Card>
 </CardGrid>
