@@ -1,5 +1,11 @@
 # starlight-nextjs-theme
 
+## 0.2.1
+
+### Patch Changes
+
+- [`fa2e281`](https://github.com/trueberryless-org/starlight-nextjs-theme/commit/fa2e28104b334a8a15626deea8fa1006def9cc11) Thanks [@trueberryless](https://github.com/trueberryless)! - Improve the accessibility of the Table of Contents by highlighting the active heading with the accent color.
+
 ## 0.2.0
 
 ### Minor Changes
