@@ -611,7 +611,11 @@
 
   .right-sidebar a[aria-current="true"] {
     font-weight: 500;
-    color: var(--sl-color-gray-3);
+    color: var(--sl-color-accent-high);
+  }
+
+  [data-theme="light"] .right-sidebar a[aria-current="true"] {
+    color: var(--sl-color-accent);
   }
 
   .right-sidebar a:hover {
