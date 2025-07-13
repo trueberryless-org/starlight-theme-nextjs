@@ -585,10 +585,19 @@
     border: none;
     box-shadow: none;
     padding-inline: 0;
+    color: var(--sl-color-gray-2);
+  }
+
+  [data-theme="light"] .pagination-links > a {
+    color: var(--sl-color-gray-3);
+  }
+
+  .pagination-links > a > span {
+    font-size: 0.85em;
   }
 
   .pagination-links > a > svg {
-    margin-bottom: 0.17rem;
+    margin-bottom: 0.15rem;
   }
 
   .pagination-links .link-title {
