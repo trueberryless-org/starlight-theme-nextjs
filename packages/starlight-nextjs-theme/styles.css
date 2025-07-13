@@ -104,7 +104,7 @@
     }
 
     .social-icons {
-      gap: 2rem;
+      gap: 1.5rem;
       margin-right: 1rem;
     }
 
@@ -150,6 +150,10 @@
   }
 
   @media (min-width: 1152px) {
+    .social-icons {
+      gap: 2rem;
+    }
+
     header.header > .header > .right-group {
       gap: 0.5rem;
     }
