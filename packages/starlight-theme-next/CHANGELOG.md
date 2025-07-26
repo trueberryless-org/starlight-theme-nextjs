@@ -1,5 +1,11 @@
 # starlight-theme-next
 
+## 0.3.2
+
+### Patch Changes
+
+- [`8262f4c`](https://github.com/trueberryless-org/starlight-theme-next/commit/8262f4c71734fcfcbf522117b527c194c5a6ffbd) Thanks [@trueberryless](https://github.com/trueberryless)! - Make mobile toc even more little by decreasing the height to 3.5rem
+
 ## 0.3.1
 
 ### Patch Changes
