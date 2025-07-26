@@ -2,7 +2,7 @@
 
 Starlight theme inspired by the Next.js docs.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f5ff9a22-4671-4b28-af57-1b2902ef0ec4/deploy-status)](https://app.netlify.com/sites/starlight-theme-next/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4360fe86-33c2-46ab-88dd-bdefab3f2822/deploy-status)](https://app.netlify.com/projects/starlight-theme-next/deploys)
 
 ## Package
 
