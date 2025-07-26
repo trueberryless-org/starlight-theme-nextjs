@@ -1,6 +1,6 @@
 # `starlight-nextjs-theme`
 
-Starlight theme inspired by the NextJS docs.
+Starlight theme inspired by the Next.js docs.
 
 ## Documentation
 

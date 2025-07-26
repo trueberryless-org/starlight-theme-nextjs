@@ -38,7 +38,7 @@ export default defineConfig({
           href: "https://github.com/trueberryless-org/starlight-nextjs-theme",
         },
       ],
-      title: "Starlight NextJS Theme",
+      title: "Starlight Next.js Theme",
     }),
   ],
 });

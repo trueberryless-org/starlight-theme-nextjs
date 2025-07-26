@@ -2,7 +2,7 @@
   "name": "starlight-nextjs-theme-docs",
   "version": "0.0.1",
   "private": true,
-  "description": "Starlight theme inspired by the NextJS docs.",
+  "description": "Starlight theme inspired by the Next.js docs.",
   "homepage": "https://github.com/trueberryless-org/starlight-nextjs-theme",
   "bugs": "https://github.com/trueberryless-org/starlight-nextjs-theme/issues",
   "repository": {
