@@ -1,6 +1,6 @@
 import type { StarlightPlugin } from "@astrojs/starlight/types";
 
-export default function starlightNextjsTheme(): StarlightPlugin {
+export default function starlightThemeNext(): StarlightPlugin {
   return {
     name: "starlight-theme-next",
     hooks: {

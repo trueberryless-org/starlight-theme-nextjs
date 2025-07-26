@@ -51,12 +51,12 @@ import { Steps, Tabs, TabItem } from "@astrojs/starlight/components";
    // astro.config.mjs
    import starlight from '@astrojs/starlight'
    import { defineConfig } from 'astro/config'
-   +import starlightNextjsTheme from 'starlight-theme-next'
+   +import starlightThemeNext from 'starlight-theme-next'
 
    export default defineConfig({
      integrations: [
        starlight({
-   +      plugins: [starlightNextjsTheme()],
+   +      plugins: [starlightThemeNext()],
          title: 'My Docs',
        }),
      ],
