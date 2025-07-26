@@ -31,17 +31,24 @@
     --sl-text-h4: var(--sl-text-lg);
     --sl-text-h5: unset;
 
+    --temp--toc-total-width: calc(
+      var(--__toc-width, var(--sl-sidebar-width))
+        /* actual sidebar width or fallback */ +
+        (2 * var(--__toc-width, 1.5rem))
+        /* extra padding/margins for TOC area */
+    );
+
+    --temp--available-space: calc(
+      100% - var(--temp--toc-total-width)
+        /* subtract full sidebar+TOC width */ -
+        var(--sl-content-inline-start, 0rem) /* subtract content indent */ -
+        var(--sl-content-width) /* subtract content block width */
+    );
+
+    /* finally center that remaining space (divide by 2) and subtract fixed 1.5rem gap */
     --sidebar-margin-left: max(
-      1rem,
-      calc(
-        (
-            100% - var(--__toc-width, var(--sl-sidebar-width)) -
-              (2 * var(--__toc-width, 1.5rem)) -
-              var(--sl-content-inline-start, 0rem) - var(--sl-content-width) -
-              1rem
-          ) /
-          2
-      )
+      0rem,
+      calc((var(--temp--available-space) / 2) - 1.5rem)
     );
   }
 
@@ -640,9 +647,5 @@
     -webkit-backdrop-filter: blur(1rem);
     backdrop-filter: blur(1rem);
     background-color: var(--sl-nextjs-header-bg-color);
-  }
-
-  .right-sidebar mobile-starlight-toc > nav summary {
-    margin-top: 1rem;
   }
 }
