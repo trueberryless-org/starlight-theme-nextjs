@@ -1,5 +1,11 @@
 # starlight-theme-next
 
+## 0.3.1
+
+### Patch Changes
+
+- [`15a98fd`](https://github.com/trueberryless-org/starlight-theme-next/commit/15a98fdc78175895f2d74d3aa9b91b345df7dfbc) Thanks [@trueberryless](https://github.com/trueberryless)! - Fix mobile table of contents takes up too much space
+
 ## 0.3.0
 
 ### Minor Changes
