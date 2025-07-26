@@ -40,9 +40,9 @@ importers:
         version: 0.34.0
       starlight-theme-next:
         specifier: workspace:*
-        version: link:../packages/starlight-nextjs-theme
+        version: link:../packages/starlight-theme-next
 
-  packages/starlight-nextjs-theme:
+  packages/starlight-theme-next:
     devDependencies:
       '@astrojs/starlight':
         specifier: ^0.34.0
@@ -51,9 +51,9 @@ importers:
         specifier: ^5.7.3
         version: 5.7.13(rollup@4.39.0)(typescript@5.8.3)
 
-  packages/starlight-nextjs-theme/fonts/geist-mono: {}
+  packages/starlight-theme-next/fonts/geist-mono: {}
 
-  packages/starlight-nextjs-theme/fonts/geist-sans: {}
+  packages/starlight-theme-next/fonts/geist-sans: {}
 
 packages:
 
