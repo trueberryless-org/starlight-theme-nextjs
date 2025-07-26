@@ -1,5 +1,17 @@
 # starlight-theme-next
 
+## 0.3.0
+
+### Minor Changes
+
+- [`e0537f3`](https://github.com/trueberryless-org/starlight-theme-next/commit/e0537f3dd70c8ad5d4702cc5059060c64a5ff05f) Thanks [@trueberryless](https://github.com/trueberryless)! - Rename NPM package to starlight-theme-next
+
+### Patch Changes
+
+- [`9f032da`](https://github.com/trueberryless-org/starlight-theme-next/commit/9f032da50ff24c37b48eaa1c0060439ebfbedab7) Thanks [@trueberryless](https://github.com/trueberryless)! - Make pagination labels and arrows more subtle and adjust margins and sizes
+
+- [`24cd5c2`](https://github.com/trueberryless-org/starlight-theme-next/commit/24cd5c229370fd5c056593f25be6c98c118f9c45) Thanks [@trueberryless](https://github.com/trueberryless)! - Fix spacing between social icons when screen width is between 800px and 1151px
+
 ## 0.2.1
 
 ### Patch Changes
