@@ -2,7 +2,7 @@
   "$schema": "https://unpkg.com/@changesets/config@3.0.3/schema.json",
   "changelog": [
     "@changesets/changelog-github",
-    { "repo": "trueberryless-org/starlight-nextjs-theme" }
+    { "repo": "trueberryless-org/starlight-theme-next" }
   ],
   "commit": false,
   "fixed": [],
@@ -10,5 +10,5 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["starlight-nextjs-theme-docs", "@fontsource/geist-mono", "@fontsource/geist-sans"]
+  "ignore": ["starlight-theme-next-docs", "@fontsource/geist-mono", "@fontsource/geist-sans"]
 }

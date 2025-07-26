@@ -13,7 +13,7 @@ concurrency:
 env:
   REGISTRY: docker.io
   IMAGE_OWNER: trueberryless
-  IMAGE_NAME: starlight-nextjs-theme
+  IMAGE_NAME: starlight-theme-next
   NODE_VERSION: 20
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
     name: Filter
     runs-on: ubuntu-latest
     outputs:
-      starlight-nextjs-theme: ${{ steps.filter.outputs.starlight-nextjs-theme }}
+      starlight-theme-next: ${{ steps.filter.outputs.starlight-theme-next }}
     steps:
       - name: Check out the repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -30,8 +30,8 @@ jobs:
         id: filter
         with:
           filters: |
-            starlight-nextjs-theme:
-              - 'packages/starlight-nextjs-theme/**'
+            starlight-theme-next:
+              - 'packages/starlight-theme-next/**'
 
   changesets:
     name: Changesets
@@ -78,8 +78,8 @@ jobs:
         if: steps.changesets.outputs.hasChangesets == 'true'
         run: |
           git checkout changeset-release/main
-          VERSION=$(node -p "require('./packages/starlight-nextjs-theme/package.json').version")
-          NAME=$(node -p "require('./packages/starlight-nextjs-theme/package.json').name")
+          VERSION=$(node -p "require('./packages/starlight-theme-next/package.json').version")
+          NAME=$(node -p "require('./packages/starlight-theme-next/package.json').name")
           git commit --amend -m "ci: release $NAME v$VERSION" --no-edit
           git push origin changeset-release/main:changeset-release/main --force
 
@@ -95,7 +95,7 @@ jobs:
       - name: Read version from package.json
         id: get_version
         run: |
-          VERSION=$(jq -r '.version' packages/starlight-nextjs-theme/package.json)
+          VERSION=$(jq -r '.version' packages/starlight-theme-next/package.json)
           echo "IMAGE_TAG=$VERSION" >> $GITHUB_ENV
 
   publish:
@@ -130,7 +130,7 @@ jobs:
         run: pnpm i
 
       - run: |
-          cd packages/starlight-nextjs-theme
+          cd packages/starlight-theme-next
           npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -148,7 +148,7 @@ jobs:
       - id: extract-changelog
         uses: sean0x42/markdown-extract@7b185cbe85263116bbf741e739e7198ba86465dc # v2.1.0
         with:
-          file: packages/starlight-nextjs-theme/CHANGELOG.md
+          file: packages/starlight-theme-next/CHANGELOG.md
           pattern: ${{ needs.image-tag.outputs.IMAGE_TAG }}
 
       - uses: ncipollo/release-action@v1

@@ -1,19 +1,19 @@
 import starlight from "@astrojs/starlight";
 import starlightPluginsDocsComponents from "@trueberryless-org/starlight-plugins-docs-components";
 import { defineConfig } from "astro/config";
-import starlightNextjsTheme from "starlight-nextjs-theme";
+import starlightNextjsTheme from "starlight-theme-next";
 
 export default defineConfig({
   integrations: [
     starlight({
       editLink: {
         baseUrl:
-          "https://github.com/trueberryless-org/starlight-nextjs-theme/edit/main/docs/",
+          "https://github.com/trueberryless-org/starlight-theme-next/edit/main/docs/",
       },
       plugins: [
         starlightNextjsTheme(),
         starlightPluginsDocsComponents({
-          pluginName: "starlight-nextjs-theme",
+          pluginName: "starlight-theme-next",
         }),
       ],
       sidebar: [
@@ -35,7 +35,7 @@ export default defineConfig({
         {
           icon: "github",
           label: "GitHub",
-          href: "https://github.com/trueberryless-org/starlight-nextjs-theme",
+          href: "https://github.com/trueberryless-org/starlight-theme-next",
         },
       ],
       title: "Starlight Next.js Theme",

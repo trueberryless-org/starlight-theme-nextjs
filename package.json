@@ -1,15 +1,15 @@
 {
-  "name": "starlight-nextjs-theme-monorepo",
+  "name": "starlight-theme-next-monorepo",
   "version": "0.0.1",
   "private": true,
   "description": "Starlight theme inspired by the Next.js docs.",
-  "homepage": "https://github.com/trueberryless-org/starlight-nextjs-theme",
+  "homepage": "https://github.com/trueberryless-org/starlight-theme-next",
   "bugs": {
-    "url": "https://github.com/trueberryless-org/starlight-nextjs-theme/issues"
+    "url": "https://github.com/trueberryless-org/starlight-theme-next/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/trueberryless-org/starlight-nextjs-theme.git"
+    "url": "https://github.com/trueberryless-org/starlight-theme-next.git"
   },
   "license": "MIT",
   "author": "trueberryless <trueberryless@gmail.com> (https://trueberryless.org)",

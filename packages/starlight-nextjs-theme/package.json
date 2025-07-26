@@ -1,5 +1,5 @@
 {
-  "name": "starlight-nextjs-theme",
+  "name": "starlight-theme-next",
   "version": "0.2.1",
   "description": "Starlight theme inspired by the Next.js docs.",
   "keywords": [
@@ -10,14 +10,14 @@
     "black",
     "dark"
   ],
-  "homepage": "https://github.com/trueberryless-org/starlight-nextjs-theme",
+  "homepage": "https://github.com/trueberryless-org/starlight-theme-next",
   "bugs": {
-    "url": "https://github.com/trueberryless-org/starlight-nextjs-theme/issues"
+    "url": "https://github.com/trueberryless-org/starlight-theme-next/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/trueberryless-org/starlight-nextjs-theme.git",
-    "directory": "packages/starlight-nextjs-theme"
+    "url": "https://github.com/trueberryless-org/starlight-theme-next.git",
+    "directory": "packages/starlight-theme-next"
   },
   "license": "MIT",
   "author": "trueberryless <trueberryless@gmail.com> (https://trueberryless.org)",

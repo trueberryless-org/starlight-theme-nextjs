@@ -38,7 +38,7 @@ importers:
       sharp:
         specifier: ^0.34.0
         version: 0.34.0
-      starlight-nextjs-theme:
+      starlight-theme-next:
         specifier: workspace:*
         version: link:../packages/starlight-nextjs-theme
 

@@ -15,14 +15,14 @@ import { Steps, Tabs, TabItem } from "@astrojs/starlight/components";
 
 <Steps>
 
-1. `starlight-nextjs-theme` is a Starlight [plugin](https://starlight.astro.build/reference/plugins/). Install it by running the following command in your terminal:
+1. `starlight-theme-next` is a Starlight [plugin](https://starlight.astro.build/reference/plugins/). Install it by running the following command in your terminal:
 
    <Tabs syncKey="pkg">
 
    <TabItem label="npm">
 
    ```sh
-   npm install starlight-nextjs-theme
+   npm install starlight-theme-next
    ```
 
    </TabItem>
@@ -30,7 +30,7 @@ import { Steps, Tabs, TabItem } from "@astrojs/starlight/components";
    <TabItem label="pnpm">
 
    ```sh
-   pnpm add starlight-nextjs-theme
+   pnpm add starlight-theme-next
    ```
 
    </TabItem>
@@ -38,7 +38,7 @@ import { Steps, Tabs, TabItem } from "@astrojs/starlight/components";
    <TabItem label="Yarn">
 
    ```sh
-   yarn add starlight-nextjs-theme
+   yarn add starlight-theme-next
    ```
 
    </TabItem>
@@ -51,7 +51,7 @@ import { Steps, Tabs, TabItem } from "@astrojs/starlight/components";
    // astro.config.mjs
    import starlight from '@astrojs/starlight'
    import { defineConfig } from 'astro/config'
-   +import starlightNextjsTheme from 'starlight-nextjs-theme'
+   +import starlightNextjsTheme from 'starlight-theme-next'
 
    export default defineConfig({
      integrations: [
